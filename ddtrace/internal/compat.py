@@ -39,7 +39,7 @@ CURRENT_MAX_PY_VERSION: tuple[int, int] = (3, 15)
 # Not NEXT_MAX_PY — packaging +1 is still (3, 15) until 3.15 GAs.
 NEXT_PY_VERSION_INFO: tuple[int, int] = (3, 16)
 NEXT_PY_VERSION: str = "%s.%s" % NEXT_PY_VERSION_INFO
-NEXT_PY_UNSUPPORTED_MSG: str = "This version of CPython is not supported yet (Python %s and later)" % NEXT_PY_VERSION
+NEXT_PY_UNSUPPORTED_MSG: str = "This version of CPython is not supported yet: {}.{}".format(*sys.version_info[:2])
 
 
 def ensure_text(s, encoding="utf-8", errors="ignore") -> str:

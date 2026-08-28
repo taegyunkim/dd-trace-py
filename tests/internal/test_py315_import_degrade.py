@@ -12,9 +12,17 @@ import pytest
 from ddtrace.internal.compat import CURRENT_MAX_PY_VERSION
 from ddtrace.internal.compat import MAX_PY
 from ddtrace.internal.compat import NEXT_MAX_PY
+from ddtrace.internal.compat import NEXT_PY_UNSUPPORTED_MSG
 from ddtrace.internal.compat import NEXT_PY_VERSION
 from ddtrace.internal.compat import NEXT_PY_VERSION_INFO
 from ddtrace.internal.compat import PYTHON_VERSION_INFO
+
+_RUNNING_VERSION: str = f"{PYTHON_VERSION_INFO[0]}.{PYTHON_VERSION_INFO[1]}"
+_UNSUPPORTED_MSG: str = f"This version of CPython is not supported yet: {_RUNNING_VERSION}"
+
+
+def test_unsupported_msg_includes_running_version() -> None:
+    assert NEXT_PY_UNSUPPORTED_MSG == _UNSUPPORTED_MSG
 
 
 # wrap() is live on CURRENT_MAX_PY_VERSION until NEXT_PY_VERSION_INFO.
