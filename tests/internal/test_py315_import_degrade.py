@@ -17,6 +17,7 @@ from ddtrace.internal.compat import NEXT_PY_VERSION
 from ddtrace.internal.compat import NEXT_PY_VERSION_INFO
 from ddtrace.internal.compat import PYTHON_VERSION_INFO
 
+
 _RUNNING_VERSION: str = f"{PYTHON_VERSION_INFO[0]}.{PYTHON_VERSION_INFO[1]}"
 _UNSUPPORTED_MSG: str = f"This version of CPython is not supported yet: {_RUNNING_VERSION}"
 
