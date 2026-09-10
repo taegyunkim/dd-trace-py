@@ -1,4 +1,4 @@
-# AIDEV-NOTE: This file must be included after retry-policies.yml and only on
+# NOTE: This file must be included after retry-policies.yml and only on
 # main. Matching hidden job names override every automatic retry policy there.
 .retry_on_failure:
   retry: 0
