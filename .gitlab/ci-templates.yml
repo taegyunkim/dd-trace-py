@@ -19,15 +19,3 @@
     paths:
       - ${CI_PROJECT_DIR}/.cache/pip
     policy: pull-push
-
-# AIDEV-NOTE: Keep script_failure out of this list. Retrying it can turn a real
-# test or build failure into a green pipeline when a later attempt passes.
-.retry_on_infrastructure_failure:
-  retry:
-    max: 2
-    when:
-      - unknown_failure
-      - data_integrity_failure
-      - runner_system_failure
-      - scheduler_failure
-      - api_failure
